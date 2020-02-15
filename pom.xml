@@ -78,6 +78,12 @@
             <plugin>
               <groupId>org.codehaus.mojo</groupId>
               <artifactId>taglist-maven-plugin</artifactId>
+            </plugin> 
+
+            <plugin>
+              <groupId>org.jacoco</groupId>
+              <artifactId>jacoco-maveen-plugin</artifactId>
+              <version>0.8.2</version>  
             </plugin>
           </reportPlugins>
         </configuration>
@@ -158,6 +164,12 @@
           <artifactId>jetty-maven-plugin</artifactId>
           <version>8.0.0.M1</version>
         </plugin>
+
+        <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>kjacoco-maven-plugin</artifactId>
+          <version>0.8.2</version>
+        </plugin>     
       </plugins>
     </pluginManagement>
   </build>
@@ -202,13 +214,6 @@
         <artifactId>mockito-core</artifactId>
         <version>1.8.5</version>
         <scope>test</scope>
-      </dependency> 
-
-      <dependency>
-        <groupID>org.jacoco</groupId>
-        <artifactId>jacoco-mmaven-plugin</artifactId>
-        <version>0.8.2</version>
-        <scope>test</scope> 
       </dependency>
     </dependencies>
   </dependencyManagement>
