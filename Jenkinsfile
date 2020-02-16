@@ -6,7 +6,7 @@ pipeline
 	    stage ('scm checkout')
 		{
 		  steps {
-			branch : 'master, git: "https://github.com/Sopi-Github/maven-project.git"'
+			git branch: 'master', url: 'https://github.com/Sopi-Github/maven-project.git'
 		       }
 	    }
 	}
