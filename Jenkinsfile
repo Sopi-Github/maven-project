@@ -33,6 +33,14 @@ pipeline
 		  }
 		 }
 		}
+		stage('package code')
+		{
+		  steps {
+		withMaven(jdk: 'localjdk-1.8', maven: 'localmevan') {
+          sh 'mvn package'
+		  }
+		}
+      }		
 	}
  }
 		  
