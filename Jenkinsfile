@@ -13,7 +13,7 @@ pipeline
 		{
 		  steps {
 		   withMaven(jdk: 'localjdk-1.8', maven: 'localmevan') {
-            'sh mvn validate'
+            sh 'mvn validate'
 			}
 }
 }
