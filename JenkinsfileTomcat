@@ -22,8 +22,7 @@ pipeline
 				  steps {
 				  sshagent(['cicd']) {
                           sh 'scp -o StrictHostkeyChecking=no **/*.war   ec2-user@172.31.14.11:/usr/share/tomcat/webapp/ 
-						  strictkey=no
-}
+						  }
 				 }
 }
 }
