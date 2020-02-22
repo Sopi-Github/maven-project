@@ -12,7 +12,7 @@
 			stage ('build && SonarQube analysis')
 			{
 			  steps {
-				  withSonarQubeEnv('mysonar') {
+				  withSonarQubeEnv(credentialsId: 'mysonar') {
 			   withMaven(jdk: 'localjdk-1.8', maven: 'localmevan') {
 		    sh 'mvn clean package sonar:sonar'
 				}
