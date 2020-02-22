@@ -1,6 +1,6 @@
 pipeline
   { 
-    agent any 
+	  agent {label "maven"} 
 	stages
 	{
 	    stage ('scm checkout')
@@ -13,42 +13,11 @@ pipeline
 		{
 		  steps {
 		   withMaven(jdk: 'localjdk-1.8', maven: 'localmevan') {
-            sh 'mvn validate'
+            sh 'mvn clean package'
 			}
 }
 }
-		stage ('compile code')
-		{
-		  steps {
-		   withMaven(jdk: 'localjdk-1.8', maven: 'localmevan') {
-            sh 'mvn compile'
-			}
-}
-}
-        stage ('test code')
-		{
-		 steps {
-		 withMaven(jdk: 'localjdk-1.8', maven: 'localmevan') {
-		  sh 'mvn test'
-		  }
-		 }
-		}
-		stage('package code')
-		{
-		  steps {
-		withMaven(jdk: 'localjdk-1.8', maven: 'localmevan') {
-          sh 'mvn package'
-		  }
-		}
-      }	
-        stage ('verify code')
-        {
-          steps {
-		withMaven(jdk: 'localjdk-1.8', maven: 'localmevan') {
-          sh 'mvn verify'
-        }
-     }
-    }	 
+		
 	}
  }
 		  
