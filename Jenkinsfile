@@ -1,25 +1,23 @@
-pipeline
-  { 
-	  agent none
-	stages
-	{
-	    stage ('scm checkout')
+	pipeline
+	  { 
+		  agent any
+		stages
 		{
-			agent { label 'maven' }
-		  steps {
-			git branch: 'master', url: 'https://github.com/Sopi-Github/maven-project.git'
-		       }
-	    }
-		stage ('Build')
-		{
-			agent { label 'maven' }
-		  steps {
-		   withMaven(jdk: 'localjdk-1.8', maven: 'localmevan') {
-            sh 'mvn clean package'
-			}
-}
-}
-		
+			stage ('scm checkout')
+			       {
+			  steps {
+				git branch: 'master', url: 'https://github.com/Sopi-Github/maven-project.git'
+			       }
+		    }
+			stage ('Build')
+			{
+			  steps {
+			   withMaven(jdk: 'localjdk-1.8', maven: 'localmevan') {
+		    sh 'mvn clean package'
+				}
 	}
- }
-		  
+	}
+
+		}
+	 }
+
