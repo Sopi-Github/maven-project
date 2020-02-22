@@ -9,7 +9,7 @@ pipeline
 			git branch: 'master', url: 'https://github.com/Sopi-Github/maven-project.git'
 		       }
 	    }
-		stage ('Buiild')
+		stage ('Build')
 		{
 		  steps {
 		   withMaven(jdk: 'localjdk-1.8', maven: 'localmevan') {
