@@ -12,7 +12,7 @@ pipeline
 	    }
 		stage ('Build')
 		{
-			agent { agent 'maven' }
+			agent { label 'maven' }
 		  steps {
 		   withMaven(jdk: 'localjdk-1.8', maven: 'localmevan') {
             sh 'mvn clean package'
