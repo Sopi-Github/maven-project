@@ -9,15 +9,16 @@
 				git branch: 'master', url: 'https://github.com/Sopi-Github/maven-project.git'
 			       }
 		    }
-			stage ('Build')
+			stage ('build && SonarQube analysis')
 			{
 			  steps {
+				  withSonarQubeEnv{
 			   withMaven(jdk: 'localjdk-1.8', maven: 'localmevan') {
-		    sh 'mvn clean package'
+		    sh 'mvn clean package sonar:sonar'
 				}
 	}
 	}
-
+			}
 		}
 	 }
 
