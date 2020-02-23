@@ -24,8 +24,8 @@ pipeline
 				  }
 			 }
 			 }
+			 failfast: true
 			 }
-			 failfast:true
 			 }
 			 }
 	    
