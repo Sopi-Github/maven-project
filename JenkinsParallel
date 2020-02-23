@@ -14,17 +14,17 @@ pipeline
 		   stage('compile')
 		     {
 			   steps {
-			      sh 'mvn compile'
+			      sh 'mvn copmile'
 				     }
 			  }
 		    stage('package')
 			  {
 			   steps {
-			      sh 'mvn pakcage'
+			      sh 'mvn package'
 				  }
 			 }
-			 },
-			 failfast : true
+			 }
+			 failFast true
 			 }
 			 }
 			 }
