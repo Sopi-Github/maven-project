@@ -1,0 +1,30 @@
+pipeline
+  { 
+    agent any 
+	stages
+	{
+	    stage ('scm checkout')
+		{
+		  steps {
+			git branch: 'master', url: 'https://github.com/Sopi-Github/maven-project.git'
+		       }
+		}
+		stage('parallel deployment'){
+		   parallel {
+		   stage('compile')
+		     {
+			   steps {
+			      sh 'mvn compile'
+				     }
+			  }
+		    stage('package')
+			  {
+			   steps {
+			      sh 'mvn package'
+				  }
+			 }
+			 }
+			 }
+			 }
+			 }
+	    
