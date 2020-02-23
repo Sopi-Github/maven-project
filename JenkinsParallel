@@ -23,8 +23,8 @@ pipeline
 			      sh 'mvn pakcage'
 				  }
 			 }
-			 failfast:true
 			 }
+			 failfast:true
 			 }
 			 }
 			 }
