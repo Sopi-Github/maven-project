@@ -1,0 +1,24 @@
+pipeline
+    {
+	   agent any
+	   stages
+	    {
+		  stage('parallel deployment'){
+		    parallel {
+		   stage('windows')
+		     { 
+			   steps { 
+			       echo 'windows'
+				     }
+			 }
+			stage('linux')
+			  {
+			    steps {
+				   echo 'linux'
+				      }
+			  }
+			  }
+			  }
+		}
+	}
+			
