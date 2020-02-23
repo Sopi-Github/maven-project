@@ -21,7 +21,7 @@ pipeline
 			     { 
 				  steps {
 				  sshagent(['cicd']) {
-                          sh 'scp -o StrictHostkeyChecking=no /var/lib/jenkins/workspace/maven-tomcat-pipeline-job/webapp/target/webapp.war ec2-user@172.31.14.11:/usr/share/tomcat/webapp'
+                          sh 'scp -o StrictHostkeyChecking=no /var/lib/jenkins/workspace/maven-tomcat-pipeline-job/webapp/target/webapp.war ec2-user@172.31.14.11:/usr/share/tomcat/webapps'
 						  }
 				 }
 }
