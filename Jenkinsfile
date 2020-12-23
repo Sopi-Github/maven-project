@@ -20,25 +20,5 @@ pipieline
              }
         }
     }
-    stage ('test the code')
-    {
-        steps
-        {
-            withMaven(jdk: 'localjdk', maven: 'localmaven')
-            {
-                sh 'mvn test'
-            }   
-        }
-    } 
-    stage ('package')
-    {
-        steps
-        {
-            withMaven(jdk: 'localjdk', maven:'localmaven')
-            {
-                sh 'mvn package'
-            }
-        }
-    }
  }
 }
