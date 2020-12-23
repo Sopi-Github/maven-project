@@ -7,7 +7,7 @@ pipieline
    {
       steps
        {
-         git branch: 'master' url: 'https://github.com/Sopi-Github/maven-project'      
+         git branch: 'master' , url: 'https://github.com/Sopi-Github/maven-project'      
        }
    }
    stage ('compile the code')
