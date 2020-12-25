@@ -34,7 +34,7 @@ pipeline
         {
             steps    
             { 
-                input please approve deployment
+                input "please approve deployment"
             }
         }    
         stage('packaging the code')
