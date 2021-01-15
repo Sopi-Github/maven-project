@@ -1,3 +1,3 @@
 FROM tomcat
 MAINTAINER swapnil 
-COPY <src> /usr/local/tomcat/webapp
+COPY webapp/target/webapp.war /usr/local/tomcat/webapp
