@@ -31,8 +31,8 @@ stages
     {
     steps 
     {
-       withCredentials([string(credentialsId: 'mydocker', variable: '')]) {
-       sh 'docker login -u sopi0708 -p ${mydocker}'
+       withCredentials([string(credentialsId: 'myDocker', variable: 'myDocker')]) {
+       sh "docker login -u sopi0708 -p ${myDocker}"
        sh 'docker push sopi0708/mytomcat:0.2'
        sh 'docker rmi sopi0708/mytomcat:0.2'
 } 
